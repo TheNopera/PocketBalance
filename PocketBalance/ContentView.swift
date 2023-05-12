@@ -7,13 +7,13 @@
 
 import SwiftUI
 
+let cliente:Client = Client(currentBalance: 0.00, transactionArr: [])
+
 struct ContentView: View {
+    @ObservedObject var client:Client = cliente
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(String(client.getBalance()))
         }
         .padding()
     }
