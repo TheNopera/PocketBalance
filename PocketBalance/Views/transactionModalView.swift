@@ -12,8 +12,7 @@ import SwiftUI
 
 struct transactionModalView: View {
     
-    
-    
+    @Environment(\.dismiss) var dismiss
     
     @State private var type:Int = InOrOut.expense.rawValue//This state here is supoosed to represent what kinda of transaction it is (income or expense), might have to change it later but thats the way I found to work with the Segmented Picker
     @State private var name:String = ""
@@ -37,11 +36,31 @@ struct transactionModalView: View {
                 .ignoresSafeArea()
             
             VStack{
-                segmentControl($type)
-                    .environment(\.colorScheme, .dark)
+                
+                HStack{
+                    
+                    ZStack {
+                        segmentControl($type)
+                            .environment(\.colorScheme, .dark)
+                        HStack {
+                            Button{
+                                dismiss.callAsFunction()
+                            }label: {
+                                Text("<Back")
+                                    .foregroundColor(.gray)
+                                    .padding(.horizontal)
+                            }
+
+                            Spacer()
+                        }
+                    }
+          
+                }
+
                 //Transaction value "Text field"
                 HStack{
                     //Spotlight: 14/05/23 (1)
+                    LargeTitle(text: "R$")
                     TextField("R$ 0,00", text: $cost)
                         .font(.largeTitle)
                         .fontWeight(.bold)
@@ -67,7 +86,7 @@ struct transactionModalView: View {
                         }.foregroundColor(.red)
                         .environment(\.colorScheme, .dark)
                         
-                        Divider()
+                
                     }
                     
                 }.padding()
@@ -107,9 +126,9 @@ struct transactionModalView: View {
                             tip = tipo
                         }
                     }
-                    print(client.getTransactions())
+                    
                     client.addTransaction(transaction: Transaction(type: tip, name: name, description: description, cost: Float(cost.replacingOccurrences(of: ",", with: "."))!, category: cat, emotion: emo, date: date))
-                    print(client.getTransactions()[0].type)
+                    dismiss.callAsFunction()
                 }label: {
                     MainButton(text: "Adicionar")
                 }.padding()

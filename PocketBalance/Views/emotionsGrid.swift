@@ -15,7 +15,7 @@ struct emotionsGrid: View {
  
     ]
 
-    let emotions:[String] = ["Triste", "Feliz","Raiva","Neutro","Ghost"]
+    let emotions:[String] = ["Triste", "Feliz","Raiva","Neutro"]
     @State var boolArr:[Bool] = [false, false, false, false,false]
     @State var position:Int = 0
     
