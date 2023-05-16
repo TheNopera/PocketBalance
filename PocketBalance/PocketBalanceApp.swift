@@ -11,7 +11,7 @@ import SwiftUI
 struct PocketBalanceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            transactionModalView(client: Client(currentBalance: 0.00, transactionArr: []))
         }
     }
 }

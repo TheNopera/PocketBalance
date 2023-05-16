@@ -7,7 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		623C30A62A12A8A1007958DD /* segmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C30A52A12A8A1007958DD /* segmentControl.swift */; };
+		623C30A82A12BBA3007958DD /* emotionsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C30A72A12BBA3007958DD /* emotionsGrid.swift */; };
+		623C30AA2A12BCCA007958DD /* EmotionCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C30A92A12BCCA007958DD /* EmotionCard.swift */; };
+		623C30AC2A12C3AA007958DD /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 623C30AB2A12C3AA007958DD /* MainButton.swift */; };
 		62D407062A0EC7850096FB76 /* clientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D407052A0EC7850096FB76 /* clientModel.swift */; };
+		62D407082A0ED0290096FB76 /* transactionModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D407072A0ED0290096FB76 /* transactionModalView.swift */; };
+		62D4070E2A1124570096FB76 /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D4070D2A1124570096FB76 /* CategoryCard.swift */; };
+		62D407112A1135060096FB76 /* categoryCardGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D407102A1135060096FB76 /* categoryCardGridView.swift */; };
+		62D407152A126D820096FB76 /* LargeTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D407142A126D820096FB76 /* LargeTitle.swift */; };
+		62D407172A126F9B0096FB76 /* SubHeadline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D407162A126F9B0096FB76 /* SubHeadline.swift */; };
 		62E994B32A0EBEEF00BF5098 /* PocketBalanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E994B22A0EBEEF00BF5098 /* PocketBalanceApp.swift */; };
 		62E994B52A0EBEEF00BF5098 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E994B42A0EBEEF00BF5098 /* ContentView.swift */; };
 		62E994B72A0EBEF000BF5098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E994B62A0EBEF000BF5098 /* Assets.xcassets */; };
@@ -16,7 +25,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		623C30A52A12A8A1007958DD /* segmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = segmentControl.swift; sourceTree = "<group>"; };
+		623C30A72A12BBA3007958DD /* emotionsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emotionsGrid.swift; sourceTree = "<group>"; };
+		623C30A92A12BCCA007958DD /* EmotionCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionCard.swift; sourceTree = "<group>"; };
+		623C30AB2A12C3AA007958DD /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		62D407052A0EC7850096FB76 /* clientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientModel.swift; sourceTree = "<group>"; };
+		62D407072A0ED0290096FB76 /* transactionModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionModalView.swift; sourceTree = "<group>"; };
+		62D4070D2A1124570096FB76 /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		62D407102A1135060096FB76 /* categoryCardGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryCardGridView.swift; sourceTree = "<group>"; };
+		62D407142A126D820096FB76 /* LargeTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeTitle.swift; sourceTree = "<group>"; };
+		62D407162A126F9B0096FB76 /* SubHeadline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubHeadline.swift; sourceTree = "<group>"; };
 		62E994AF2A0EBEEF00BF5098 /* PocketBalance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PocketBalance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E994B22A0EBEEF00BF5098 /* PocketBalanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketBalanceApp.swift; sourceTree = "<group>"; };
 		62E994B42A0EBEEF00BF5098 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +54,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62D4070C2A1124450096FB76 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				62D4070D2A1124570096FB76 /* CategoryCard.swift */,
+				62D407142A126D820096FB76 /* LargeTitle.swift */,
+				62D407162A126F9B0096FB76 /* SubHeadline.swift */,
+				623C30A52A12A8A1007958DD /* segmentControl.swift */,
+				623C30A92A12BCCA007958DD /* EmotionCard.swift */,
+				623C30AB2A12C3AA007958DD /* MainButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		62D4070F2A112BAE0096FB76 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62D407072A0ED0290096FB76 /* transactionModalView.swift */,
+				62D407102A1135060096FB76 /* categoryCardGridView.swift */,
+				623C30A72A12BBA3007958DD /* emotionsGrid.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		62E994A62A0EBEEF00BF5098 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +96,8 @@
 		62E994B12A0EBEEF00BF5098 /* PocketBalance */ = {
 			isa = PBXGroup;
 			children = (
+				62D4070F2A112BAE0096FB76 /* Views */,
+				62D4070C2A1124450096FB76 /* Components */,
 				62E994C02A0EC03800BF5098 /* Models */,
 				62E994B22A0EBEEF00BF5098 /* PocketBalanceApp.swift */,
 				62E994B42A0EBEEF00BF5098 /* ContentView.swift */,
@@ -152,9 +195,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				62D407062A0EC7850096FB76 /* clientModel.swift in Sources */,
+				623C30AA2A12BCCA007958DD /* EmotionCard.swift in Sources */,
+				62D407172A126F9B0096FB76 /* SubHeadline.swift in Sources */,
+				62D407082A0ED0290096FB76 /* transactionModalView.swift in Sources */,
+				62D407112A1135060096FB76 /* categoryCardGridView.swift in Sources */,
 				62E994C22A0EC06300BF5098 /* transactionModel.swift in Sources */,
+				62D4070E2A1124570096FB76 /* CategoryCard.swift in Sources */,
+				623C30A82A12BBA3007958DD /* emotionsGrid.swift in Sources */,
+				62D407152A126D820096FB76 /* LargeTitle.swift in Sources */,
 				62E994B52A0EBEEF00BF5098 /* ContentView.swift in Sources */,
 				62E994B32A0EBEEF00BF5098 /* PocketBalanceApp.swift in Sources */,
+				623C30AC2A12C3AA007958DD /* MainButton.swift in Sources */,
+				623C30A62A12A8A1007958DD /* segmentControl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
