@@ -10,7 +10,7 @@ import SwiftUI
 struct ListRow: View {
     var imgName:String
     var transName:String
-    var value:String
+    var value:Float
     var body: some View {
         VStack{
             RoundedRectangle(cornerRadius: 20)
@@ -21,12 +21,11 @@ struct ListRow: View {
                         Image(imgName)
                             .padding(.horizontal)
                         SubHeadline(text: transName)
-                        
-                        
                         Spacer()
-                        Text(value)
-                            
                         
+                        Text("R$"+String(format: "%.2f", value))
+                            .font(.footnote)
+                            .foregroundColor(Color("MainColor"))
                     }.padding()
                 }
         }
@@ -35,6 +34,6 @@ struct ListRow: View {
 
 struct ListRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListRow(imgName: "Outro", transName: "DeveloperID", value: "R$548,00")
+        ListRow(imgName: "Outro", transName: "DeveloperID", value: 548.00)
     }
 }

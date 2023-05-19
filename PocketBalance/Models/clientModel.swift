@@ -33,9 +33,18 @@ class Client:ObservableObject
     func setBalance(quant:Float){
         self.currentBalance = quant
     }
-   
+    
     func addTransaction(transaction:Transaction){
-        self.currentBalance -= transaction.cost
+
+        
+        
+        if (transaction.type == .income){
+            transaction.category = .income
+            self.currentBalance += transaction.cost
+            
+        } else{
+            self.currentBalance -= transaction.cost
+        }
         self.transactionArr.append(transaction)
     }
     

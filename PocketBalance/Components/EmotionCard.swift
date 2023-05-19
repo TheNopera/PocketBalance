@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct EmotionCard: View {
-    var emotion:String
+    var emotion:Emotion
     @Binding var arrBool:[Bool]
     @Binding var position:Int
     
-    @Binding var modalSelection:String
+    @Binding var modalSelection:Emotion
     var body: some View {
         HStack{
             if arrBool[position]{
                 Button{
                     arrBool[position].toggle()
                 }label: {
-                    Image(emotion)
+                    Image(emotion.rawValue)
                 }
                 .frame(width: 72, height: 72).overlay(
                     RoundedRectangle(cornerRadius: 6)
@@ -38,7 +38,7 @@ struct EmotionCard: View {
                         modalSelection = emotion
                     }
                 }label: {
-                    Image(emotion)
+                    Image(emotion.rawValue)
                 }
             }
         }.frame(width: 72, height: 72)
@@ -48,6 +48,6 @@ struct EmotionCard: View {
 
 struct EmotionCard_Previews: PreviewProvider {
     static var previews: some View {
-        EmotionCard(emotion: "Triste",arrBool:.constant([false,false,false,false]) , position: .constant(1), modalSelection: .constant("Triste"))
+        EmotionCard(emotion: .triste,arrBool:.constant([false,false,false,false]) , position: .constant(1), modalSelection: .constant(.triste))
     }
 }

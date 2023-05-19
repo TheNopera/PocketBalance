@@ -1,14 +1,15 @@
 //
 //  ContentView.swift
 //  PocketBalance
-//
 //  Created by Daniel Ishida on 12/05/23.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     //Creates an instance of the class Client. StateObject is here to enable binding of a class instance between views.
+    
+    let deviceWidth = UIScreen.main.bounds.width
+    let deviceHeight = UIScreen.main.bounds.height
     
     @StateObject var client:Client = Client(currentBalance: 0.00, transactionArr: [])
     @State var modalOpen:Bool = false
@@ -19,15 +20,21 @@ struct ContentView: View {
                 ZStack{
                     Color("BackgroundColor")
                         .ignoresSafeArea()
-                    
+                    Image("BalanceLine")
+                        .position(x: 30 / 100 * deviceWidth, y: 9 / 100 * deviceHeight)
                     VStack{
-                        
-                        HStack {
-                            LargeTitle(text: "R$" + String(client.getBalance()).replacingOccurrences(of: ".", with: ","))
+                        HStack{
+                            VStack {
+                                LargeTitle(text: "R$" + String(format:"%.2f",client.getBalance()).replacingOccurrences(of: ".", with: ","))
+                                
+                                
+                            }
                             Spacer()
                         }.padding()
                         HStack{
                             Title(text: "Minhas transações")
+                                .bold()
+                                .padding()
                             Spacer()
                             
                         }
@@ -46,20 +53,23 @@ struct ContentView: View {
                                 }.padding()
                             
                         }else{
-                            ForEach(client.getTransactions(), id: \.id){ trans in
-                                NavigationLink{
+                            ScrollView{
+                                ForEach(client.getTransactions(), id: \.id){ trans in
+                                    NavigationLink{
+                                        DetailedItem(transaction: trans)
+                                    }label: {
+                                        ListView(transaction: .constant(trans))
+                                    }
                                     
-                                }label: {
-                                    ListView(transaction: .constant(trans))
                                 }
-                                
                             }
+                            
                             
                             
                         }
                         Spacer()
                         
-                    }
+                    }.padding()
                     VStack{
                         Spacer()
                         Button{
@@ -67,9 +77,9 @@ struct ContentView: View {
                         }label: {
                             AddButton()
                         }.padding()
-                        .fullScreenCover(isPresented: $modalOpen) {
-                            transactionModalView(client: client)
-                        }
+                            .fullScreenCover(isPresented: $modalOpen) {
+                                transactionModalView2(transaction: Transaction(type: .income, name: "", description: "", cost: 10, category: .other, emotion: .neutro, date: Date()), client: client)
+                            }
                     }
                 }
             }

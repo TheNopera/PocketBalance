@@ -13,7 +13,7 @@ struct ListView: View {
     
     var body: some View {
         VStack{
-            ListRow(imgName:transaction.category.rawValue , transName: transaction.name, value: "R$ \(String(transaction.cost))").padding()
+            ListRow(imgName:transaction.category.rawValue , transName: transaction.name, value:  transaction.cost).padding()
             
         }
     }

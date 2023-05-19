@@ -14,15 +14,16 @@ struct categoryCardGridView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    let categories:[String] = ["Comida", "Mercado", "Conta", "Transporte", "Pet", "Saúde", "Roupa", "Manutenção", "Outro", "ghost"]
+    let categories:[Category] = Category.allCases.map {$0}
+
     @State var selectedArray:[Bool] = [false,false,false,false,false,false,false,false,false,false]
     @State var position:Int = 0
-    @Binding var modalSelection:String
+    @Binding var modalSelection:Category
     var body: some View {
         //Check ghost later
         LazyVGrid(columns: columns, spacing: 10) {
             ForEach(0..<9, id: \.self){ i in
-                CategoryCard(selectedArray: $selectedArray, position: .constant(i),modalSelection: $modalSelection, Category: categories[i])
+                CategoryCard(selectedArray: $selectedArray, position: .constant(i),modalSelection: $modalSelection, category: categories[i])
             }
         }.padding()
     }
@@ -30,6 +31,6 @@ struct categoryCardGridView: View {
 
 struct categoryCardGridView_Previews: PreviewProvider {
     static var previews: some View {
-        categoryCardGridView(modalSelection: .constant("Comida"))
+        categoryCardGridView(modalSelection: .constant(.food))
     }
 }

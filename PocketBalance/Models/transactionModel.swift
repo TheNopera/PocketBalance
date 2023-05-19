@@ -26,7 +26,7 @@ enum Category : String, CaseIterable{
     case clothing = "Roupa"
     case pet = "Pet"
     case other = "Outro"
-    case namorada = "Namorada"
+    case income = "Income"
 }
 
 //Define as emoções
@@ -42,7 +42,7 @@ class Transaction:ObservableObject, Identifiable{
     let id:UUID = UUID()
     @Published var type:InOrOut
     @Published var name:String
-    @Published var description:String?
+    @Published var description:String
     @Published var cost:Float
     @Published var category:Category
     @Published var emotion:Emotion

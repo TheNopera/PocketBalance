@@ -10,8 +10,8 @@ import SwiftUI
 struct CategoryCard: View {
     @Binding var selectedArray:[Bool]
     @Binding var position:Int
-    @Binding var modalSelection:String
-    var Category:String
+    @Binding var modalSelection:Category
+    var category:Category
     //Spotlight - 14/05/23 (3)
     var body: some View {
         VStack{
@@ -21,8 +21,8 @@ struct CategoryCard: View {
                     selectedArray[position].toggle()
                 }label: {
                     VStack {
-                        Image(Category)
-                        Text(Category)
+                        Image(category.rawValue)
+                        Text(category.rawValue)
                             .font(.caption2)
                             .foregroundColor(.gray)
                         
@@ -40,12 +40,12 @@ struct CategoryCard: View {
                             }
                         }
                         selectedArray[position].toggle()
-                        modalSelection = Category
+                        modalSelection = category
                     }
                 }label: {
                     VStack {
-                        Image(Category)
-                        Text(Category)
+                        Image(category.rawValue)
+                        Text(category.rawValue)
                             .font(.caption2)
                             .foregroundColor(.gray)
                     }
@@ -58,6 +58,6 @@ struct CategoryCard: View {
 
 struct CategoryCard_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryCard(selectedArray:.constant([false,false,false,false,false,false,false,false,false]), position: .constant(0), modalSelection: .constant("Comida"),Category:Category.food.rawValue)
+        CategoryCard(selectedArray:.constant([false,false,false,false,false,false,false,false,false]), position: .constant(0), modalSelection: .constant(.food),category: .food)
     }
 }

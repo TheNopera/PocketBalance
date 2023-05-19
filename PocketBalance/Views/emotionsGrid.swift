@@ -15,11 +15,11 @@ struct emotionsGrid: View {
  
     ]
 
-    let emotions:[String] = ["Triste", "Feliz","Raiva","Neutro"]
+    let emotions:[Emotion] = Emotion.allCases.map {$0}
     @State var boolArr:[Bool] = [false, false, false, false,false]
     @State var position:Int = 0
     
-    @Binding var modalSelection:String
+    @Binding var modalSelection:Emotion
     var body: some View {
         LazyVGrid(columns: columns,spacing: 20) {
             ForEach(0..<emotions.count, id: \.self){ i in
@@ -31,6 +31,6 @@ struct emotionsGrid: View {
 
 struct emotionsGrid_Previews: PreviewProvider {
     static var previews: some View {
-        emotionsGrid(modalSelection: .constant("Triste"))
+        emotionsGrid(modalSelection: .constant(.triste))
     }
 }
