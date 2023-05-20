@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct DetailedItem: View {
-    var transaction:Transaction
+    @ObservedObject var transaction:Transaction
+    @ObservedObject var client:Client
     @State var modalIsOpen:Bool = false
     var body: some View {
         NavigationStack {
@@ -91,10 +92,12 @@ struct DetailedItem: View {
             
             .toolbar {
                 Button{
-                    
+                        
                         modalIsOpen.toggle()
                 }label: {
                     Text("Edit")
+                }.fullScreenCover(isPresented: $modalIsOpen) {
+                    EditTransactionVIew(transaction: transaction, formatedCost: String(transaction.cost),client: client)
                 }
             }
         }
@@ -103,6 +106,6 @@ struct DetailedItem: View {
 
 struct DetailedItem_Previews: PreviewProvider {
     static var previews: some View {
-        DetailedItem(transaction: Transaction(type: .income, name: "Bolsa Academy", description: "awdadadadadadadadwadawawdawdawdawdawdawdadadadawdadadadadawdawdawdadadadadadawdadadadadadadadawdawawdaawdawdawdawdawdawdawddawdadawdawdwdawawdwadawdadawdadaddda", cost: 1250.00, category: .income, emotion: .neutro, date: Date()))
+        DetailedItem(transaction: Transaction(type: .income, name: "Bolsa Academy", description: "awdadadadadadadadwadawawdawdawdawdawdawdadadadawdadadadadawdawdawdadadadadadawdadadadadadadadawdawawdaawdawdawdawdawdawdawddawdadawdawdwdawawdwadawdadawdadaddda", cost: 1250.00, category: .income, emotion: .neutro, date: Date()),client: Client(currentBalance: 0.00, transactionArr: []))
     }
 }

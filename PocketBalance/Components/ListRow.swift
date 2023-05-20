@@ -15,7 +15,7 @@ struct ListRow: View {
         VStack{
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color("SecondaryColor"))
-                .frame(width: .infinity, height: 51)
+                .frame( height: 51)
                 .overlay{
                     HStack{
                         Image(imgName)

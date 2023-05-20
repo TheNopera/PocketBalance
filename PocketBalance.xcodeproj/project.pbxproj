@@ -31,6 +31,7 @@
 		62E994B72A0EBEF000BF5098 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E994B62A0EBEF000BF5098 /* Assets.xcassets */; };
 		62E994BA2A0EBEF000BF5098 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E994B92A0EBEF000BF5098 /* Preview Assets.xcassets */; };
 		62E994C22A0EC06300BF5098 /* transactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E994C12A0EC06300BF5098 /* transactionModel.swift */; };
+		62F575872A196B090068A579 /* EdittransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F575862A196B090068A579 /* EdittransactionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		62E994B62A0EBEF000BF5098 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62E994B92A0EBEF000BF5098 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62E994C12A0EC06300BF5098 /* transactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionModel.swift; sourceTree = "<group>"; };
+		62F575862A196B090068A579 /* EdittransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdittransactionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +88,6 @@
 				628998D02A140F93007D6010 /* AddButton.swift */,
 				628998D22A1540FD007D6010 /* TextInput.swift */,
 				628998D42A154414007D6010 /* LargeTextInput.swift */,
-				628998D62A156FEB007D6010 /* formulario.swift */,
 				628998DA2A168E40007D6010 /* DetiledCard.swift */,
 			);
 			path = Components;
@@ -101,6 +102,8 @@
 				62E994B42A0EBEEF00BF5098 /* ContentView.swift */,
 				623C30AF2A13BB7A007958DD /* ListView.swift */,
 				628998D82A166ED4007D6010 /* DetailedItem.swift */,
+				628998D62A156FEB007D6010 /* formulario.swift */,
+				62F575862A196B090068A579 /* EdittransactionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				628998D72A156FEB007D6010 /* formulario.swift in Sources */,
 				623C30A62A12A8A1007958DD /* segmentControl.swift in Sources */,
 				623C30B22A13DF39007958DD /* ListRow.swift in Sources */,
+				62F575872A196B090068A579 /* EdittransactionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

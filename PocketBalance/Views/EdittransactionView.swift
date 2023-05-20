@@ -1,8 +1,7 @@
 import SwiftUI
 
-var emptyTransaction = Transaction(type: .income, name: "", description: "", cost: 0.00, category: .other, emotion: .neutro, date: Date())
 
-struct transactionModalView2: View {
+struct EditTransactionVIew: View {
     
     @Environment(\.dismiss) var dismiss
     
@@ -89,13 +88,14 @@ struct transactionModalView2: View {
                         }
                         
                         Button{
+                            
                             transaction.cost = Float(formatedCost.replacingOccurrences(of: ",", with: "."))!
-                            client.addTransaction(transaction: transaction)
+                            client.updateBalance(transaction: transaction)
                            
                             dismiss.callAsFunction()
                             
                         }label: {
-                            MainButton(text: "Adicionar")
+                            MainButton(text: "Atualizar")
                         }.padding()
                     }
                     Spacer()

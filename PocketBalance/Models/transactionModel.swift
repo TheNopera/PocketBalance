@@ -18,7 +18,6 @@ enum InOrOut:Int,CaseIterable{
 enum Category : String, CaseIterable{
     case food = "Comida"
     case bills = "Conta"
-    case enterteinment = "Entreterimento"
     case groceries = "Mercado"
     case health = "Saúde"
     case transport = "Transporte"

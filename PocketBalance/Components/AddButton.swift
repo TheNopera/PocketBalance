@@ -12,6 +12,7 @@ struct AddButton: View {
         Image(systemName: "plus.circle.fill")
             .font(.system(size: 43))
             .foregroundColor(Color("MainColor"))
+            .frame(height: 49)
     }
 }
 

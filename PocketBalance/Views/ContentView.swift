@@ -36,7 +36,12 @@ struct ContentView: View {
                                 .bold()
                                 .padding()
                             Spacer()
+                            Button{
                             
+                            }label: {
+                                Image(systemName: "line.3.horizontal.decrease.circle")
+                                    .foregroundColor(Color("MainColor"))
+                            }.padding(.horizontal)
                         }
                         if client.getTransactions().count == 0{
                             Rectangle()
@@ -56,7 +61,7 @@ struct ContentView: View {
                             ScrollView{
                                 ForEach(client.getTransactions(), id: \.id){ trans in
                                     NavigationLink{
-                                        DetailedItem(transaction: trans)
+                                        DetailedItem(transaction: trans,client: client)
                                     }label: {
                                         ListView(transaction: .constant(trans))
                                     }
@@ -68,19 +73,19 @@ struct ContentView: View {
                             
                         }
                         Spacer()
-                        
+                        VStack{
+                            Spacer()
+                            Button{
+                                modalOpen.toggle()
+                            }label: {
+                                AddButton()
+                            }.padding()
+                                .fullScreenCover(isPresented: $modalOpen) {
+                                    transactionModalView2(transaction: Transaction(type: .income, name: "", description: "", cost: 10, category: .other, emotion: .neutro, date: Date()), client: client)
+                                }
+                        }.frame(height: 49)
                     }.padding()
-                    VStack{
-                        Spacer()
-                        Button{
-                            modalOpen.toggle()
-                        }label: {
-                            AddButton()
-                        }.padding()
-                            .fullScreenCover(isPresented: $modalOpen) {
-                                transactionModalView2(transaction: Transaction(type: .income, name: "", description: "", cost: 10, category: .other, emotion: .neutro, date: Date()), client: client)
-                            }
-                    }
+                  
                 }
             }
         }

@@ -35,9 +35,6 @@ class Client:ObservableObject
     }
     
     func addTransaction(transaction:Transaction){
-
-        
-        
         if (transaction.type == .income){
             transaction.category = .income
             self.currentBalance += transaction.cost
@@ -64,6 +61,11 @@ class Client:ObservableObject
         self.currentBalance -= quant
     }
     
-    
-    
+    func updateBalance(transaction:Transaction){
+        for i in 0..<transactionArr.count{
+            if transactionArr[i].id == transaction.id{
+                transactionArr[i] = transaction
+            }
+        }
+    }
 }

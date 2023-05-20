@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+let categories:[Category] = Category.allCases.map {$0}
 struct categoryCardGridView: View {
     let columns = [
         GridItem(.flexible()),
@@ -14,7 +14,7 @@ struct categoryCardGridView: View {
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    let categories:[Category] = Category.allCases.map {$0}
+
 
     @State var selectedArray:[Bool] = [false,false,false,false,false,false,false,false,false,false]
     @State var position:Int = 0
