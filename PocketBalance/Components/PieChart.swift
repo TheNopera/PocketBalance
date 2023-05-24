@@ -56,7 +56,7 @@ struct PieChart_Previews: PreviewProvider {
     static var previews: some View {
         PieChart(sliceData: PieChartData(text: "Hello world",
             startAngle: Angle(degrees:0.0),
-            endAngle: Angle(degrees:  45.0),
+            endAngle: Angle(degrees:  360.0),
             color: Color.black))
     }
 }

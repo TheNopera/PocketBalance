@@ -7,24 +7,28 @@
 
 import SwiftUI
 
+
 struct CategoryChartControl: View {
-    @State var  catIsShowing:[Category] = []
+    @Binding var catIsShowing:[Category: Bool]
+    var cat:Category
     var body: some View {
-        VStack{
-            HStack{
-                Button{
-                    
-                }label: {
-                    Image(Category.food.rawValue)
-                }
+        
+        
+        Button{
+            catIsShowing[cat]?.toggle()
+        }label: {
+            VStack {
+                Image(cat.rawValue)
                 
             }
         }
+        
+        
     }
 }
 
 struct CategoryChartControl_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryChartControl()
+        CategoryChartControl(catIsShowing: .constant([:]), cat: .food)
     }
 }

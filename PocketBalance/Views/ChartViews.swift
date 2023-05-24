@@ -7,8 +7,16 @@
 
 import SwiftUI
 
+
+
+                                    
+
+
 struct ChartViews: View {
     @ObservedObject var client:Client
+    @State var catIsShowing:[Category:Bool] = Dictionary(uniqueKeysWithValues: categories.map{($0, true)})
+    
+    
     var body: some View {
         ZStack {
             Color("BackgroundColor")
@@ -16,7 +24,7 @@ struct ChartViews: View {
             ScrollView {
                 VStack{
                     HStack {
-                        Title(text: "Gastos por emoção")
+                        Title(text: "Gastos por categoria")
                             .bold()
                         
                         Spacer()
@@ -26,11 +34,14 @@ struct ChartViews: View {
                         Spacer()
                     }
                     
-                    BarChart(client: client)
-                    ForEach(client.getTransactions(), id: \.id){ tran in
-                        
+                    BarChart(client: client, catIsShowing: $catIsShowing)
+                    
+                    HStack {
+                        ForEach(client.getTransactions(), id: \.id){ tran in
+                            CategoryChartControl(catIsShowing: $catIsShowing, cat: tran.category )
+                        }
                     }
-       
+                    
                     Spacer()
                 }.padding()
             }

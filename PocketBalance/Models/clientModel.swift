@@ -4,7 +4,7 @@
 //
 //  Created by Daniel Ishida on 12/05/23.
 //
-
+import SwiftUI
 import Foundation
 
 class Client:ObservableObject
@@ -93,6 +93,4 @@ class Client:ObservableObject
             }
         }
     }
-    
-
 }

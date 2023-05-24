@@ -69,6 +69,7 @@
 		62F5758A2A19B1240068A579 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
 		62F5758C2A1B9FC10068A579 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		62F575902A1E3BCB0068A579 /* CategoryChartControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartControl.swift; sourceTree = "<group>"; };
+		62F575932A1EA85F0068A579 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +96,7 @@
 				628998CE2A13F72D007D6010 /* Title.swift */,
 				628998D02A140F93007D6010 /* AddButton.swift */,
 				628998D22A1540FD007D6010 /* TextInput.swift */,
+				62F575932A1EA85F0068A579 /* MyPlayground.playground */,
 				628998D42A154414007D6010 /* LargeTextInput.swift */,
 				628998DA2A168E40007D6010 /* DetiledCard.swift */,
 				62F5758A2A19B1240068A579 /* PieChart.swift */,
