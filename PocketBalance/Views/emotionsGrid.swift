@@ -5,7 +5,9 @@
 //  Created by Daniel Ishida on 15/05/23.
 //
 
+
 import SwiftUI
+let emotions:[Emotion] = Emotion.allCases.map {$0}
 struct emotionsGrid: View {
     let columns = [
         GridItem(.flexible()),
@@ -15,7 +17,7 @@ struct emotionsGrid: View {
  
     ]
 
-    let emotions:[Emotion] = Emotion.allCases.map {$0}
+    
     @State var boolArr:[Bool] = [false, false, false, false,false]
     @State var position:Int = 0
     

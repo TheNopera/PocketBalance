@@ -4,12 +4,12 @@
 //  Created by Daniel Ishida on 12/05/23.
 
 import SwiftUI
-
+let deviceWidth = UIScreen.main.bounds.width
+let deviceHeight = UIScreen.main.bounds.height
 struct ContentView: View {
     //Creates an instance of the class Client. StateObject is here to enable binding of a class instance between views.
     
-    let deviceWidth = UIScreen.main.bounds.width
-    let deviceHeight = UIScreen.main.bounds.height
+
     
     @StateObject var client:Client = Client(currentBalance: 0.00, transactionArr: [])
     @State var modalOpen:Bool = false
@@ -24,12 +24,15 @@ struct ContentView: View {
                         .position(x: 30 / 100 * deviceWidth, y: 9 / 100 * deviceHeight)
                     VStack{
                         HStack{
-                            VStack {
-                                LargeTitle(text: "R$" + String(format:"%.2f",client.getBalance()).replacingOccurrences(of: ".", with: ","))
-                                
-                                
-                            }
+                            LargeTitle(text: "R$" + String(format:"%.2f",client.getBalance()).replacingOccurrences(of: ".", with: ","))
                             Spacer()
+                            NavigationLink{
+                                ChartViews(client: client)
+                            }label: {
+                                Image(systemName: "chart.bar")
+                                    .foregroundColor(Color("MainColor"))
+                            }
+                            
                         }.padding()
                         HStack{
                             Title(text: "Minhas transações")
@@ -37,7 +40,7 @@ struct ContentView: View {
                                 .padding()
                             Spacer()
                             Button{
-                            
+                                
                             }label: {
                                 Image(systemName: "line.3.horizontal.decrease.circle")
                                     .foregroundColor(Color("MainColor"))
@@ -85,7 +88,7 @@ struct ContentView: View {
                                 }
                         }.frame(height: 49)
                     }.padding()
-                  
+                    
                 }
             }
         }

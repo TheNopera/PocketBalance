@@ -28,7 +28,32 @@ class Client:ObservableObject
         return self.transactionArr
     }
     
+    func getFullExpense() -> Float{
+        var sum:Float = 0
+        for transaction in transactionArr {
+            sum += transaction.cost
+        }
+        return sum
+    }
+    func getFullExpenseByCategory(category:Category) -> Float{
+        var sum:Float = 0
+        for tran in transactionArr {
+            if tran.category == category{
+                sum += tran.cost
+            }
+        }
+        return sum
+    }
     
+    func getFullExpenseByEmotions(emotion:Emotion) -> Float{
+        var sum:Float = 0
+        for emo in transactionArr{
+            if emo.emotion == emotion{
+                sum += emo.cost
+            }
+        }
+        return sum
+    }
     //"SET" FUNCTIONS
     func setBalance(quant:Float){
         self.currentBalance = quant
@@ -68,4 +93,6 @@ class Client:ObservableObject
             }
         }
     }
+    
+
 }

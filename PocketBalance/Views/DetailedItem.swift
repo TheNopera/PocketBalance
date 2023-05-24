@@ -58,7 +58,7 @@ struct DetailedItem: View {
                 }else{
                     VStack{
                         LargeTitle(text: transaction.name)
-                        Title(text: "R$" + String(transaction.cost))
+                        Title(text: "R$" + String(format: "%.2f", transaction.cost))
                         HStack{
                             DetiledCard(name: transaction.category.rawValue)
                                 .padding()

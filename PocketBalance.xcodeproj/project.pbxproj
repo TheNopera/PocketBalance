@@ -32,6 +32,10 @@
 		62E994BA2A0EBEF000BF5098 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62E994B92A0EBEF000BF5098 /* Preview Assets.xcassets */; };
 		62E994C22A0EC06300BF5098 /* transactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E994C12A0EC06300BF5098 /* transactionModel.swift */; };
 		62F575872A196B090068A579 /* EdittransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F575862A196B090068A579 /* EdittransactionView.swift */; };
+		62F575892A19B03C0068A579 /* ChartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F575882A19B03C0068A579 /* ChartViews.swift */; };
+		62F5758B2A19B1240068A579 /* PieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5758A2A19B1240068A579 /* PieChart.swift */; };
+		62F5758D2A1B9FC10068A579 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F5758C2A1B9FC10068A579 /* BarChart.swift */; };
+		62F575912A1E3BCB0068A579 /* CategoryChartControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62F575902A1E3BCB0068A579 /* CategoryChartControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +65,10 @@
 		62E994B92A0EBEF000BF5098 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		62E994C12A0EC06300BF5098 /* transactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transactionModel.swift; sourceTree = "<group>"; };
 		62F575862A196B090068A579 /* EdittransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdittransactionView.swift; sourceTree = "<group>"; };
+		62F575882A19B03C0068A579 /* ChartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViews.swift; sourceTree = "<group>"; };
+		62F5758A2A19B1240068A579 /* PieChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChart.swift; sourceTree = "<group>"; };
+		62F5758C2A1B9FC10068A579 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		62F575902A1E3BCB0068A579 /* CategoryChartControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryChartControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,9 @@
 				628998D22A1540FD007D6010 /* TextInput.swift */,
 				628998D42A154414007D6010 /* LargeTextInput.swift */,
 				628998DA2A168E40007D6010 /* DetiledCard.swift */,
+				62F5758A2A19B1240068A579 /* PieChart.swift */,
+				62F5758C2A1B9FC10068A579 /* BarChart.swift */,
+				62F575902A1E3BCB0068A579 /* CategoryChartControl.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -104,6 +115,7 @@
 				628998D82A166ED4007D6010 /* DetailedItem.swift */,
 				628998D62A156FEB007D6010 /* formulario.swift */,
 				62F575862A196B090068A579 /* EdittransactionView.swift */,
+				62F575882A19B03C0068A579 /* ChartViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,11 +242,14 @@
 				62D407082A0ED0290096FB76 /* transactionModalView.swift in Sources */,
 				62D407112A1135060096FB76 /* categoryCardGridView.swift in Sources */,
 				628998DB2A168E40007D6010 /* DetiledCard.swift in Sources */,
+				62F575912A1E3BCB0068A579 /* CategoryChartControl.swift in Sources */,
 				628998D32A1540FD007D6010 /* TextInput.swift in Sources */,
 				62E994C22A0EC06300BF5098 /* transactionModel.swift in Sources */,
 				62D4070E2A1124570096FB76 /* CategoryCard.swift in Sources */,
+				62F5758B2A19B1240068A579 /* PieChart.swift in Sources */,
 				623C30A82A12BBA3007958DD /* emotionsGrid.swift in Sources */,
 				628998D52A154414007D6010 /* LargeTextInput.swift in Sources */,
+				62F575892A19B03C0068A579 /* ChartViews.swift in Sources */,
 				628998CF2A13F72D007D6010 /* Title.swift in Sources */,
 				628998D92A166ED4007D6010 /* DetailedItem.swift in Sources */,
 				62D407152A126D820096FB76 /* LargeTitle.swift in Sources */,
@@ -242,6 +257,7 @@
 				623C30B02A13BB7A007958DD /* ListView.swift in Sources */,
 				628998D12A140F93007D6010 /* AddButton.swift in Sources */,
 				62E994B32A0EBEEF00BF5098 /* PocketBalanceApp.swift in Sources */,
+				62F5758D2A1B9FC10068A579 /* BarChart.swift in Sources */,
 				623C30AC2A12C3AA007958DD /* MainButton.swift in Sources */,
 				628998D72A156FEB007D6010 /* formulario.swift in Sources */,
 				623C30A62A12A8A1007958DD /* segmentControl.swift in Sources */,
