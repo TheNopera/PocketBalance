@@ -10,7 +10,7 @@ import Charts
 
 
 
-struct BarChart: View {
+struct BarChartCategory: View {
     @ObservedObject var client:Client
     @Binding var catIsShowing:[Category:Bool]
     
@@ -21,15 +21,22 @@ struct BarChart: View {
                if catIsShowing[cat] == true{
                     BarMark(x: .value("awda", cat.rawValue), y: .value("awdad", client.getFullExpenseByCategory(category: cat)))
                        .foregroundStyle(by: .value("category color", cat.rawValue))
+                       .cornerRadius(5)
                        
                 }
             }.chartForegroundStyleScale(["Comida": .orange, "Conta": .red, "Mercado": .cyan, "Saúde": .pink, "Transporte": .yellow, "Manutenção": .purple, "Roupa": .blue, "Pet":.green, "Outro": .gray])
-                .frame(width: 326, height: 246)
+                .frame(width: 326, height: 186)
                 .environment(\.colorScheme, .dark)
-    
-                .onAppear{
-                    
+                .chartLegend(.hidden)
+                .chartXAxis{
+                    AxisMarks{ _ in
+                        AxisGridLine()
+                        AxisTick()
+                        
+                    }
                 }
+                
+                
             
               
 //                Chart(client.getTransactions()){ item in
@@ -48,7 +55,7 @@ struct BarChart: View {
 
 struct BarChart_Previews: PreviewProvider {
     static var previews: some View {
-        BarChart(client: Client(currentBalance: 0.00, transactionArr: [
+        BarChartCategory(client: Client(currentBalance: 0.00, transactionArr: [
             Transaction(type: .expense, name: "awda", description: "awdawd", cost: 35.90, category: .food, emotion: .triste, date: Date()),
             Transaction(type: .expense, name: "example", description: "example description", cost: 10.50, category: .bills, emotion: .feliz, date: Date()),
             Transaction(type: .expense, name: "another expense", description: "another description", cost: 50.00, category: .clothing, emotion: .triste, date: Date()),

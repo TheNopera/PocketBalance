@@ -43,7 +43,7 @@ struct ContentView: View {
                                 
                             }label: {
                                 Image(systemName: "line.3.horizontal.decrease.circle")
-                                    .foregroundColor(Color("MainColor"))
+                                    .foregroundColor(.gray)
                             }.padding(.horizontal)
                         }
                         if client.getTransactions().count == 0{

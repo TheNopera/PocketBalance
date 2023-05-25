@@ -31,7 +31,19 @@ class Client:ObservableObject
     func getFullExpense() -> Float{
         var sum:Float = 0
         for transaction in transactionArr {
-            sum += transaction.cost
+            if transaction.category != .income{
+                sum += transaction.cost
+            }
+        }
+        return sum
+    }
+    
+    func expenseByCategories(array:[Category:Bool]) -> Float{
+        var sum:Float = 0
+        for cat in array{
+            if cat.value && cat.key != .income{
+                sum += getFullExpenseByCategory(category: cat.key )
+            }
         }
         return sum
     }

@@ -9,18 +9,47 @@ import SwiftUI
 
 
 struct CategoryChartControl: View {
+    @ObservedObject var client:Client
     @Binding var catIsShowing:[Category: Bool]
+    @State var highlight:Bool = true
     var cat:Category
     var body: some View {
-        
-        
-        Button{
-            catIsShowing[cat]?.toggle()
-        }label: {
-            VStack {
-                Image(cat.rawValue)
+        VStack {
+            
+            ZStack {
+                Button{
+                    catIsShowing[cat]?.toggle()
+                    highlight.toggle()
+                }label: {
+                    if highlight{
+                        HStack {
+                            Image(cat.rawValue)
+                            Text(cat.rawValue)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Text(String(format: "R$%.2f", client.getFullExpenseByCategory(category: cat)))
+                                .foregroundColor(.gray)
+                        }
+                    }else{
+                        HStack {
+                            Image(cat.rawValue)
+                            Text(cat.rawValue)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                            Spacer()
+                            Text(String(format: "R$%.2f", client.getFullExpenseByCategory(category: cat)))
+                                .strikethrough(true)
+                        }.grayscale(1)
+                    }
                 
+                    
+                }.padding(.horizontal)
+            
             }
+              
+            Divider()
+            
         }
         
         
@@ -29,6 +58,6 @@ struct CategoryChartControl: View {
 
 struct CategoryChartControl_Previews: PreviewProvider {
     static var previews: some View {
-        CategoryChartControl(catIsShowing: .constant([:]), cat: .food)
+        CategoryChartControl(client: Client(currentBalance: 0.00, transactionArr: []),catIsShowing: .constant([:]), cat: .food)
     }
 }

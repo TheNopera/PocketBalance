@@ -13,7 +13,6 @@ struct SubHeadline: View {
         Text(text)
             .font(.subheadline)
             .foregroundColor(Color("MainColor"))
-            .bold()
     }
 }
 
