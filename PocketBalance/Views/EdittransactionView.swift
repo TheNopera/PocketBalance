@@ -42,9 +42,9 @@ struct EditTransactionVIew: View {
                             //Spotlight: 14/05/23 (1)
                             LargeTitle(text: "R$")
                             LargeTextInput(placeholder: "0,00", value:$formatedCost)
-                            Image(systemName: "pencil")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 22))
+//                            Image(systemName: "pencil")
+//                                .foregroundColor(.gray)
+//                                .font(.system(size: 22))
                             Spacer()
                         }.padding(.horizontal).padding(.top)
                         HStack{

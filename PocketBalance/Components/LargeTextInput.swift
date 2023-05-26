@@ -17,7 +17,7 @@ struct LargeTextInput: View {
             .keyboardType(.decimalPad)
             .font(.largeTitle)
             .fontWeight(.bold)
-            .frame(width: 128)
+//            .frame(width: 128)
             .foregroundColor(Color("MainColor"))
             .submitLabel(.done)
     }

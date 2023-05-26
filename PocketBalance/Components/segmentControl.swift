@@ -20,7 +20,7 @@ struct segmentControl: View {
     
     
     var body: some View {
-        Picker("test", selection: $currentIndex) {
+        Picker("test", selection: $currentIndex.animation(.spring())) {
             Text("Entrada").tag(InOrOut.income)
             Text("Saída").tag(InOrOut.expense)
         }.pickerStyle(.segmented)

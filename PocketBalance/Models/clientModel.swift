@@ -66,6 +66,20 @@ class Client:ObservableObject
         }
         return sum
     }
+    
+    func getFilteredEmotions() -> [Transaction]{
+        var filteredArray:[Transaction] = []
+        for transaction in transactionArr {
+            if !filteredArray.contains(where: { tran in
+                tran.emotion == transaction.emotion
+            }){
+                filteredArray.append(transaction)
+            }
+        }
+        
+        
+        return filteredArray
+    }
     //"SET" FUNCTIONS
     func setBalance(quant:Float){
         self.currentBalance = quant

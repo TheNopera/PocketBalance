@@ -24,7 +24,7 @@ struct transactionModalView2: View {
                             Button{
                                 dismiss.callAsFunction()
                             }label: {
-                                Text("<Back")
+                                Text("Back")
                                     .foregroundColor(.gray)
                                     .padding(.horizontal)
                             }
@@ -43,9 +43,9 @@ struct transactionModalView2: View {
                             //Spotlight: 14/05/23 (1)
                             LargeTitle(text: "R$")
                             LargeTextInput(placeholder: "0,00", value:$formatedCost)
-                            Image(systemName: "pencil")
-                                .foregroundColor(.gray)
-                                .font(.system(size: 22))
+//                            Image(systemName: "pencil")
+//                                .foregroundColor(.gray)
+//                                .font(.system(size: 22))
                             Spacer()
                         }.padding(.horizontal).padding(.top)
                         HStack{
@@ -100,7 +100,10 @@ struct transactionModalView2: View {
                         }.padding()
                     }
                     Spacer()
-            }.padding().scrollDismissesKeyboard(.interactively)
+            }.padding().scrollDismissesKeyboard(.interactively).edgesIgnoringSafeArea(.bottom)
+            
+            
+            
             //.highPriorityGesture(TapGesture().onEnded({ _ in
                // hideKeyboard()
             //}))

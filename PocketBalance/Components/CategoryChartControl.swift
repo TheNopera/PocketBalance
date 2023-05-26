@@ -28,7 +28,7 @@ struct CategoryChartControl: View {
                                 .font(.footnote)
                                 .foregroundColor(.gray)
                             Spacer()
-                            Text(String(format: "R$%.2f", client.getFullExpenseByCategory(category: cat)))
+                            Text(String(format: "R$%.2f", client.getFullExpenseByCategory(category: cat)).replacingOccurrences(of: ".", with: ","))
                                 .foregroundColor(.gray)
                         }
                     }else{

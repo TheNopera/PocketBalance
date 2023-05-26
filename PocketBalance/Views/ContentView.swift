@@ -6,6 +6,7 @@
 import SwiftUI
 let deviceWidth = UIScreen.main.bounds.width
 let deviceHeight = UIScreen.main.bounds.height
+let CategoryColor = ["Comida": Color(.orange), "Conta": .red, "Mercado": .cyan, "Saúde": .pink, "Transporte": .yellow, "Manutenção": .purple, "Roupa": .blue, "Pet":.green, "Outro": .gray]
 struct ContentView: View {
     //Creates an instance of the class Client. StateObject is here to enable binding of a class instance between views.
     

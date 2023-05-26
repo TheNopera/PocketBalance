@@ -39,15 +39,7 @@ struct BarChartCategory: View {
                 
             
               
-//                Chart(client.getTransactions()){ item in
-//                    if item.category != .income{
-//                        BarMark(x: .value("Mount",item.emotion.rawValue),
-//                                y: .value("Value", item.cost))
-//                        .foregroundStyle(by: .value("category color", item.category.rawValue))
-//                        .position(by: .value("category", item.category.rawValue))
-//                    }
-//                }.chartForegroundStyleScale(["Comida": .orange, "Conta": .red, "Mercado": .cyan, "Saúde": .pink, "Transporte": .yellow, "Manutenção": .purple, "Roupa": .blue, "Pet":.green, "Outro": .gray])
-//                    .frame(width: 326, height: 246).environment(\.colorScheme, .dark)
+
             
         }
     }

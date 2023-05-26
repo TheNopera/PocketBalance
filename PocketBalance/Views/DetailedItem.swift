@@ -97,7 +97,7 @@ struct DetailedItem: View {
                 }label: {
                     Text("Edit")
                 }.fullScreenCover(isPresented: $modalIsOpen) {
-                    EditTransactionVIew(transaction: transaction, formatedCost: String(transaction.cost),client: client)
+                    EditTransactionVIew(transaction: transaction, formatedCost: String(format: "%.2f",transaction.cost),client: client)
                 }
             }
         }
